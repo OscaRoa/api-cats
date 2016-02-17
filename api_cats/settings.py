@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Local Apps
     'cats',
+    'users',
 
     # REST Framework
     'rest_framework',
