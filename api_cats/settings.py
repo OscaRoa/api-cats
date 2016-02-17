@@ -40,6 +40,11 @@ INSTALLED_APPS = [
 
     # Local Apps
     'cats',
+    'users',
+
+    # REST Framework
+    'rest_framework',
+    'rest_framework.authtoken',  # Token authentication need
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,3 +127,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# REST Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 25
+}
