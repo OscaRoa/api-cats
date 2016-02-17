@@ -19,6 +19,7 @@ from rest_framework.authtoken import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/v1/', include('cats.urls', namespace='cats')),
     # REST Framework URL's
     url(r'^api-auth/', include(
         'rest_framework.urls',
